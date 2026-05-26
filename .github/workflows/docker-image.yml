@@ -39,7 +39,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+            docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.TOKEN }}
             docker pull ghcr.io/${{ github.repository_owner }}/landing-bitrix:latest
             docker rm -f landing-bitrix || true
             docker run -d \
